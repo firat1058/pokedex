@@ -20,9 +20,10 @@ async componentDidMount() {
                     <div className="row">
                         {this.state.pokemon.map(pokemon =>(
                             <PokemonCard
-                            key={pokemon.name}
+                            key={pokemon.id}
+                            id = {pokemon.id}
                             name={pokemon.name}
-                            url={pokemon.url}
+                            image={pokemon.image}
                             />
                         ))}
                         </div>
