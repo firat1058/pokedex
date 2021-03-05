@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
+import Pokemon from '../pokemon/Pokemon';
+import PokemonList from '../pokemon/PokemonList';
 
 const Branding = styled.a`
   -moz-user-select: none;
@@ -17,12 +18,11 @@ const Logo = styled.img`
 `;
 
 export default class NavBar extends Component {
-  state = {
-    hoverNavBar: false
-    
-  };
 
-  
+  state = {
+    hoverNavBar: false,
+    search: ""
+  };
 
   hoverNavBar() {
     window.scrollY <= 0
@@ -41,6 +41,7 @@ export default class NavBar extends Component {
   }
   onchange = e =>{
     this.setState({search : e.target.value });
+    
   }
 
 

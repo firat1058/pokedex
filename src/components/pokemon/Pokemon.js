@@ -26,7 +26,6 @@ const TYPE_COLORS = {
 
 export default class Pokemon extends Component {
 
-
     state = {
         name: '',
         pokemonIndex: '',
@@ -75,6 +74,7 @@ export default class Pokemon extends Component {
         specialAttack = stats['specialAttack']
         specialDefense = stats['specialDefense']
 
+        const egg_groups = pokemonRes.data.data.egg_groups.map(egg => {return egg});
        
         const height = pokemonRes.data.data.height;
         const weight = pokemonRes.data.data.weight;
@@ -123,14 +123,15 @@ export default class Pokemon extends Component {
            },
            height,
            weight,
+           egg_groups,
            abilities,
            evs
 
        });
-
     }
 
     render() {
+        
         return (
           <div className="col">
             <div className="card">
@@ -293,45 +294,8 @@ export default class Pokemon extends Component {
                       <div className="col-6">
                         <h6 className="float-left">{this.state.weight} lbs</h6>
                       </div>
-                      <div className="col-6">
-                        <h6 className="float-right">Catch Rate:</h6>
-                      </div>
-                      <div className="col-6">
-                        <h6 className="float-left">{this.state.catchRate}%</h6>
-                      </div>
-                      <div className="col-6">
-                        <h6 className="float-right">Gender Ratio:</h6>
-                      </div>
-                      <div className="col-6">
-                        <div class="progress">
-                          <div
-                            class="progress-bar"
-                            role="progressbar"
-                            style={{
-                              width: `${this.state.genderRatioFemale}%`,
-                              backgroundColor: '#c2185b'
-                            }}
-                            aria-valuenow="15"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          >
-                            <small>{this.state.genderRatioFemale}</small>
-                          </div>
-                          <div
-                            class="progress-bar"
-                            role="progressbar"
-                            style={{
-                              width: `${this.state.genderRatioMale}%`,
-                              backgroundColor: '#1976d2'
-                            }}
-                            aria-valuenow="30"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          >
-                            <small>{this.state.genderRatioMale}</small>
-                          </div>
-                        </div>
-                      </div>
+
+
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -342,24 +306,14 @@ export default class Pokemon extends Component {
                       <div className="col-6">
                         <h6 className="float-left">{this.state.egg_groups} </h6>
                       </div>
-                      <div className="col-6">
-                        <h6 className="float-right">Hatch Steps:</h6>
-                      </div>
-                      <div className="col-6">
-                        <h6 className="float-left">{this.state.hatchSteps}</h6>
-                      </div>
+
                       <div className="col-6">
                         <h6 className="float-right">Abilities:</h6>
                       </div>
                       <div className="col-6">
                         <h6 className="float-left">{this.state.abilities}</h6>
                       </div>
-                      <div className="col-6">
-                        <h6 className="float-right">EVs:</h6>
-                      </div>
-                      <div className="col-6">
-                        <h6 className="float-left">{this.state.evs}</h6>
-                      </div>
+ 
                     </div>
                   </div>
                 </div>
