@@ -43,11 +43,11 @@ export default class Pokemon extends Component {
         },
         height: "",
         weight: "",
-        eggGroup: "",
+        egg_groups: "",
         abilities: "",
         genderRatioMale: "",
         genderRatioFemale: "",
-        evs: "",
+        EVs: "",
         hatchSteps: ""
 
 
@@ -75,7 +75,7 @@ export default class Pokemon extends Component {
         specialAttack = stats['specialAttack']
         specialDefense = stats['specialDefense']
 
-        //Converting Decimeters to feet & lbs
+       
         const height = pokemonRes.data.data.height;
         const weight = pokemonRes.data.data.weight;
 
@@ -104,9 +104,11 @@ export default class Pokemon extends Component {
 
         this.setState({
             description
-        });
+        
+          });
 
-       this.setState({
+
+        this.setState({
            imageUrl,
            pokemonIndex,
            name,
@@ -133,8 +135,10 @@ export default class Pokemon extends Component {
           <div className="col">
             <div className="card">
               <div className="card-header">
+              
                 <div className="row">
                   <div className="col-5">
+                      
                     <h5>{this.state.pokemonIndex}</h5>
                   </div>
                   <div className="col-7">
@@ -333,10 +337,10 @@ export default class Pokemon extends Component {
                   <div className="col-md-6">
                     <div className="row">
                       <div className="col-6">
-                        <h6 className="float-right">Egg Groups:</h6>
+                        <h6 className="float-right">Egg_Groups:</h6>
                       </div>
                       <div className="col-6">
-                        <h6 className="float-left">{this.state.eggGroups} </h6>
+                        <h6 className="float-left">{this.state.egg_groups} </h6>
                       </div>
                       <div className="col-6">
                         <h6 className="float-right">Hatch Steps:</h6>

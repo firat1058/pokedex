@@ -1,13 +1,7 @@
-
 import React, { Component } from 'react';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { HashRouter as Router, Route, Switch} from 'react-router-dom';
-
-
 import './App.css';
-
-
 import NavBar from './components/layout/NavBar';
 import Dashboard from './components/layout/Dashboard';
 import Pokemon from './components/pokemon/Pokemon';
