@@ -12,7 +12,6 @@ async componentDidMount() {
     const res = await axios.get(this.state.url);
     this.setState({ pokemon: res.data['data']});
 }
-
     render() {
         return (
             <div>
