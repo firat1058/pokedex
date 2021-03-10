@@ -52,8 +52,11 @@ export default class Pokemon extends Component {
 
     };
 
+
+
     async componentDidMount() {
         const { pokemonIndex } = this.props.match.params;
+
 
         //Url for pokemon information
         const pokemonUrl = `https://intern-pokedex.myriadapps.com/api/v1/pokemon/${pokemonIndex}`;
@@ -63,6 +66,7 @@ export default class Pokemon extends Component {
         const pokemonRes = await axios.get(pokemonUrl);
         const name = pokemonRes.data.data.name;
         const imageUrl = pokemonRes.data.data.image;
+        console.log(name)
 
         let {hp, attack, defense, speed, specialAttack, specialDefense } = '';
         console.log(pokemonRes.data.data.stats)
@@ -82,8 +86,6 @@ export default class Pokemon extends Component {
         const types = pokemonRes.data.data.types.map( type => type);
 
         const themeColor = `${TYPE_COLORS[types[types.lenght - 1]]}`;
-
-
 
         const abilities = pokemonRes.data.data.abilities.map(ability => {
             return ability.toLowerCase().split('-').map(s => s.charAt(0).toUpperCase() + s.substring(1)).join(' ');

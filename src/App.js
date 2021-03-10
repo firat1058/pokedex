@@ -7,14 +7,16 @@ import Dashboard from './components/layout/Dashboard';
 import Pokemon from './components/pokemon/Pokemon';
 
 
+
 class App extends Component {
+
+
   render() {
     return (
       <Router>
-
-
       <div className="App">
         <NavBar/>
+
         <div className="container">
           <Switch>
             <Route exact path="/" component={Dashboard} />
