@@ -9,7 +9,7 @@ export default class Dashboard extends Component {
     return (
       <div className="row">
         <div className="col">
-          <PokemonList />
+          <PokemonList pokeList={this.props.fSearch}/>
         </div>
       </div>
     );
